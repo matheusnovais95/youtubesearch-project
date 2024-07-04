@@ -40,12 +40,17 @@ app.post('/favorites', (req, res) => {
     res.json(favorites);
 });
 
-app.delete('/favorites', (req, res) => {
-    const videoId = req.body.id.videoId;
+app.delete('/favorites/:id', (req, res) => {
+    const videoId = req.params.id;
     favorites = favorites.filter(fav => fav.id.videoId !== videoId);
     res.json(favorites);
 });
 
-app.listen(port, () => {
-    console.log(`BFF listening at http://localhost:${port}`);
-});
+if (require.main === module) {
+    app.listen(port, () => {
+        console.log(`BFF listening at http://localhost:${port}`);
+    });
+}
+module.exports = app;
+
+

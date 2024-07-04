@@ -51,12 +51,8 @@ export function renderFavorites(element) {
 }
 
 function removeFavorite(video, element) {
-  fetch(`${BASE_BFF_URL}/favorites`, {
+  fetch(`${BASE_BFF_URL}/favorites/${video.id.videoId}`, {
     method: "DELETE",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ id: video.id }),
   })
     .then((response) => response.json())
     .then((updatedFavorites) => {
