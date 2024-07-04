@@ -12,5 +12,5 @@
 1. Clonar o repositório
 
 ```bash
-git clone <URL_DO_SEU_REPOSITORIO>
-cd project-root
+git clone https://github.com/matheusnovais95/youtubesearch-project.git
+cd youtubesearch-project
