@@ -1,0 +1,248 @@
+/* Estilos para o layout */
+body {
+  height: 100vh;
+
+  overflow: hidden;
+}
+
+#app {
+  height: 100%;
+  display: flex;
+
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+
+.drawer {
+  width: 20%;
+  min-width: 200px;
+  max-width: 200px;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 25px;
+
+  left: 0px;
+
+  position: relative;
+  border-right: 1px solid var(--black);
+
+  background-color: var(--background-gray-light);
+
+  height: 100%;
+}
+
+#favorites-count {
+  background-color: var(--yellow-favorite);
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  text-wrap: nowrap;
+}
+
+#content {
+  padding: 20px 0 20px 20px;
+
+  overflow: auto;
+}
+
+.hamburguer-button {
+  cursor: pointer;
+  display: none;
+
+  border: none;
+  background-color: transparent;
+}
+
+#content header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 25px;
+}
+
+.container-input {
+  display: flex;
+  gap: 25px;
+
+  position: relative;
+
+  width: 300px;
+}
+
+#search-input {
+  padding: 10px;
+  border: 1px solid;
+
+  width: 100%;
+}
+
+#search-button {
+  cursor: pointer;
+
+  border: none;
+  background-color: transparent;
+
+  position: absolute;
+  right: 5px;
+  top: 8px;
+}
+
+#search-button:hover {
+  filter: brightness(1.2);
+}
+
+nav {
+  width: 100%;
+  position: relative;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  margin-bottom: 10px;
+  max-height: 40px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  display: flex;
+  padding: 12px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+
+  align-items: center;
+  gap: 5px;
+
+  height: 100%;
+}
+
+nav ul li a:hover {
+  background-color: #e9e9e9;
+}
+
+#video-list,
+#favorites-list {
+  padding-top: 25px;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+#video-list > div,
+#favorites-list > div {
+  max-width: 300px;
+  position: relative;
+}
+
+.favorite-button {
+  border: none;
+  font-size: 20px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.1s ease;
+
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.favorite-button:hover {
+  transform: scale(1.2);
+}
+
+.close-button {
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.container-close-button {
+  width: 100%;
+
+  display: none;
+}
+
+@media screen and (max-width: 700px) {
+  .hamburguer-button {
+    display: block;
+  }
+
+  #search-input {
+    width: 100%;
+  }
+
+  #content {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .drawer {
+    width: 100%;
+    position: absolute;
+    z-index: 100;
+    left: -250px;
+  }
+  .toggle-menu {
+    display: flex;
+    left: 0;
+  }
+
+  #content header {
+    align-items: center;
+    max-width: 80%;
+    margin: auto;
+  }
+
+  #content {
+    padding: 20px 0 20px 0;
+  }
+
+  #favorites-list {
+    justify-content: center;
+  }
+
+  #search-button {
+    border: none;
+  }
+
+  .container-input {
+    gap: 10px;
+
+    max-width: 300px;
+    align-items: center;
+  }
+
+  #search-input {
+    width: 100%;
+  }
+
+  .container-close-button {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  #video-list {
+    justify-content: center;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+}
