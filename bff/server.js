@@ -17,7 +17,7 @@ app.get('/videos', async (req, res) => {
         const response = await axios.get(`https://www.googleapis.com/youtube/v3/search`, {
             params: {
                 part: 'snippet',
-                maxResults: 10,
+                maxResults: 20,
                 q: query,
                 key: apiKey,
             }
